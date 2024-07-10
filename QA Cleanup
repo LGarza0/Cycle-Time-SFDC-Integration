@@ -1,0 +1,9 @@
+The first step in this project was creating a single object structure that can record and track a unit throughout the production cycle. 
+The challenge arises when each production station and team differs, there are top level WOs with zero to mulitple subassembly records, and the inconsistency in procedures across Automation and GRID.
+Currently, the Quality Assurance record is storing unique data on each unit, and is also overwhelmed with out of date and unused fields.
+Also, QA Lines were being auto created along with the QA, but have not been populated since 2017.
+First, I disabled the trigger to auto create QALS, then determined which QALs were completely blank, and removed them from the system.
+Next, I evaluated what fields were populated on the QAL, and what fields were featured on the exisitng SPOC Legacy QA object.
+Then, I pushed the QAL fields to the Legacy QA, gathered an import file of QALs that had unique data not already cloned on an existing QA, pushed the import, and deleted redundant QALS.
+Additionally, I added all of the fields on the QA to the Legacy QA, so that the QA object can be fully cleaned without losing past data.
+Last, once ready to deploy project, I will export all QA's that have been previously created and load them into the Legacy QA, while still being linked to the respective QA record. Then the unecessary fields can be deleted, but the data in those field would be accessible in the linked Legacy QA.
