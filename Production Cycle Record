@@ -1,0 +1,7 @@
+In order to capture cycle times for each production stage, the Production Cycle record will be created. 
+This will be created once a user starts production on a unit on a particular WO, and indicates so in the application interface.
+To have the record linked to the proper unit, the Unit record (formally the QA) will be created at the release of a Top Level WO.
+The Unit record will be automatically linked to the Sales Order Line, as the SOL is the gospel on what will be delivered, which allows the Shipment Line to be easily linked.
+When the Production Cycle record is created, the back end program will query the Top Level WO to find the appropriate Unit record. 
+Multiple Production Cycle records will be created for each unit, and can come from different WOs (Top Level/Subassembly).
+Validations will need to be in place to ensure accuracy.
